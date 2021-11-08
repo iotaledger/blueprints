@@ -1,9 +1,9 @@
-# Deploy and test the P2P energy grid demo
+# Deploy and Test the P2P Energy Grid Demo
 
 **To start using the P2P energy grid app, deploy your own application.**
 
 :::info
-Deployment instructions are not yet available for this blueprint.
+Deployment instructions are not available for this blueprint.
 :::
 
 <!--

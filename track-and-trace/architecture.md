@@ -1,4 +1,4 @@
-# Application architecture
+# Application Architecture
 
 **The track-and-trace application uses the IOTA MAM protocol to give returnable assets an ID and to track those assets in streams of transactions called MAM channels.**
 
@@ -10,7 +10,7 @@ This blueprint uses the following architecture whereby trackers register their o
 
 ![Track and Trace](/img/blueprints/track-and-trace-architecture.png)
 
-## Building blocks
+## Building Blocks
 
 To allow trackers to create and update assets' MAM channels, we use a tracker app that does the following: 
 
@@ -18,7 +18,7 @@ To allow trackers to create and update assets' MAM channels, we use a tracker ap
 - Attach the asset data to the Tangle, using the new MAM channel
 - Save the asset data in the database
 
-### Creating a new channel
+### Creating a New Channel
 
 When trackers first register their ownership of an asset, the `createItemChannel()` method is called, which creates a new MAM channel, acting as the asset's digital twin. This MAM channel registers the following information about the asset:
 
@@ -59,7 +59,7 @@ const createNewChannel = async (payload, secretKey) => {
   return mamData; 
 };
 ```
-### Attaching the asset data to the Tangle
+### Attaching the Asset Data to the Tangle
 
 After creating the MAM channel, we can publish the asset information to the IOTA Tangle, using the `Mam.attach()` method.
 
@@ -85,7 +85,7 @@ const publish = async data => {
 }; 
 ```
 
-### Saving the asset data in the database
+### Saving the Asset Data in the Database
 
 To allow trackers to use the API to update the MAM channel, the `assetUniqueID` as well as the following information is also stored in a database.
 
@@ -136,10 +136,10 @@ export const updateItem = (eventBody, mam, newItemData, user) => {
 };
 ```
 
-## Customization considerations
+## Customization Considerations
 
 If you want to use this blueprint in your own system, you should consider the following.
 
-### Missing assets
+### Missing Assets
 
 You may want to implement a process to handle missing assets. For example, if an asset's MAM channel is not updated within a certain timeframe, you could trigger a message to be sent to the last known custodian.	 

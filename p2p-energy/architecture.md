@@ -1,4 +1,4 @@
-# Application architecture
+# Application Architecture
 
 **The P2P energy grid application publishes data to an IOTA network from sources, producers, consumers, and the grid.**
 
@@ -10,13 +10,13 @@ This blueprint uses the following architecture whereby the source, producer, con
 
 ![P2P Energy PoC - Sequence Diagram](/img/blueprints/p2p_sequence.png)
 
-## Building blocks
+## Building Blocks
 
 All entities communicate, using a combination of MAM channels and web API calls.
 
 ![P2P energy PoC - communication](/img/blueprints/p2p_communication.png)
 
-### Source MAM channel
+### Source MAM Channel
 
 Sources creates a MAM channel to tell the producer how much energy they have contributed over a period of time, using the following payload:
 
@@ -49,7 +49,7 @@ After creating a MAM channel, sources register with producers, using the [produc
 
 ![P2P energy PoC - source workflow](/img/blueprints/p2p_source.png)
 
-### Consumer MAM channel
+### Consumer MAM Channel
 
 Consumers create a MAM channel to keep the grid up to date with how much they owe, using the following payload:
 
@@ -65,7 +65,7 @@ After creating a MAM channel, consumers register with the grid, using the [grid'
 
 ![P2P energy PoC - consumer workflow](/img/blueprints/p2p_consumer.png)
 
-### Producer MAM channel
+### Producer MAM Channel
 
 The producer creates a MAM channel to tell the grid the following:
 
@@ -92,7 +92,7 @@ After creating a MAM channel, producers register with the grid, using the [grid'
 
 ![P2P energy PoC - producer workflow](/img/blueprints/p2p_producer.png)
 
-### Producer registration API
+### Producer Registration API
 
 Producers allow sources to register their MAM channels, using an API, so that producers can monitor them.
 
@@ -104,13 +104,13 @@ Registers a new source.
 PUT https://producer/registration/:registrationId
 ```
 
-##### Path parameters
+##### Path Parameters
 
 |**Parameter** | **Required or Optional**|**Description** | **Type**|
 |--|--|--|--|
 | `registrationId` | Required|A string of characters that identifies a source. You must generate your own random ID and keep it for future API calls. | string|
 
-##### Body parameters
+##### Body Parameters
 
 |**Parameter** | **Required or Optional**|**Description** | **Type**|
 |--|--|--|--|
@@ -120,8 +120,9 @@ PUT https://producer/registration/:registrationId
 | `sideKey` | Optional|The side key for the MAM channel that's given in the `root` parameter. You need a side key only if the MAM channel is in restricted mode. | string|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
+
 ```python
 import urllib2
 import json
@@ -147,7 +148,9 @@ jsonData = json.loads(returnData)
 print jsonData
 ```
 ---
-### Node.js
+
+###### Node.js
+
 ```js
 var request = require('request');
 
@@ -173,8 +176,11 @@ request(options, function (error, response, data) {
   }
 });
 ```
+
 ---
-### cURL
+
+###### cURL
+
 ```bash
 curl https://producer/registration/:registrationId \
 -X PUT \
@@ -186,17 +192,22 @@ curl https://producer/registration/:registrationId \
    "sideKey": "AAA....ZZZZZZ"
 }'
 ```
+
 --------------------
 
 ##### Response examples
+
 --------------------
-### 200
+
+###### 200
+
 ```json
 {
    "success": true,
    "message": "OK"
 }
 ```
+
 --------------------
 
 ##### Results
@@ -224,8 +235,9 @@ DELETE https://producer/registration/:registrationId/:sideKey
 | `sideKey` | Optional|If the source was registered with a side key, you must pass this parameter | string|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
+
 ```python
 import urllib2
 import json
@@ -241,8 +253,10 @@ jsonData = json.loads(returnData)
 
 print jsonData
 ```
----
-### Node.js
+
+
+###### Node.js
+
 ```js
 var request = require('request');
 
@@ -260,25 +274,27 @@ request(options, function (error, response, data) {
   }
 });
 ```
----
-### cURL
+
+###### cURL
+
 ```bash
 curl https://producer/registration/:registrationId/:sideKey \
 -X DELETE \
 -H 'Content-Type: application/json'
 ```
---------------------
+
 
 ##### Response examples
---------------------
-### 200
+
+###### 200
+
 ```json
 {
    "success": true,
    "message": "OK"
 }
 ```
---------------------
+
 
 ##### Results
 
@@ -350,8 +366,9 @@ PUT https://producer/registration/:registrationId
 | `sideKey` | Optional|The side key for the MAM channel that's given in the `root` parameter. You need a side key only if the MAM channel is in restricted mode. | string|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
+
 ```python
 import urllib2
 import json
@@ -377,8 +394,9 @@ jsonData = json.loads(returnData)
 
 print jsonData
 ```
----
-### Node.js
+
+###### Node.js
+
 ```js
 var request = require('request');
 
@@ -404,8 +422,9 @@ request(options, function (error, response, data) {
   }
 });
 ```
----
-### cURL
+
+###### cURL
+
 ```bash
 curl https://grid/registration/:registrationId \
 -X PUT \
@@ -417,11 +436,12 @@ curl https://grid/registration/:registrationId \
    "sideKey": "AAA....ZZZZZZ"
 }'
 ```
---------------------
+
 
 ##### Response examples
---------------------
-### 200
+
+###### 200
+
 ```json
 {
    {
@@ -432,7 +452,7 @@ curl https://grid/registration/:registrationId \
 }
 }
 ```
---------------------
+
 
 ##### Results
 
@@ -461,8 +481,9 @@ DELETE https://grid/registration/:registrationId/:sideKey
 | `sideKey` | Optional|If the source was registered with a side key, you must pass this parameter | string|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
+
 ```python
 import urllib2
 import json
@@ -478,8 +499,9 @@ jsonData = json.loads(returnData)
 
 print jsonData
 ```
----
-### Node.js
+
+###### Node.js
+
 ```js
 var request = require('request');
 
@@ -497,25 +519,26 @@ request(options, function (error, response, data) {
   }
 });
 ```
----
+
 ### cURL
+
 ```bash
 curl https://grid/registration/:registrationId/:sideKey \
 -X DELETE \
 -H 'Content-Type: application/json'
 ```
---------------------
 
 ##### Response examples
---------------------
+
 ### 200
+
 ```json
 {
    "success": true,
    "message": "OK"
 }
 ```
---------------------
+
 
 ##### Results
 
@@ -524,7 +547,7 @@ curl https://grid/registration/:registrationId/:sideKey \
 | `success` | Whether the request was successful |
 | `message` | A message from the server|
 
-### Grid storage API
+### Grid Storage API
 
 The grid storage API is available to any part of the architecture that needs to store information on a permanent basis.
 
@@ -552,8 +575,9 @@ PUT https://grid/storage/item/:registration-id/:context/:id
 | `{}` | Required|A JSON object | JSON|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
+
 ```python
 import urllib2
 import json
@@ -575,8 +599,9 @@ jsonData = json.loads(returnData)
 
 print jsonData
 ```
----
-### Node.js
+
+###### Node.js
+
 ```js
 var request = require('request');
 
@@ -599,8 +624,9 @@ request(options, function (error, response, data) {
   }
 });
 ```
----
-### cURL
+
+###### cURL
+
 ```bash
 curl https://grid/storage/item/:registration-id/:context/:id \
 -X PUT \
@@ -609,18 +635,17 @@ curl https://grid/storage/item/:registration-id/:context/:id \
    "myCustomData": "Some data"
 }'
 ```
---------------------
 
-##### Response examples
---------------------
-### 200
+##### Response Examples
+
+###### 200
+
 ```json
 {
    "success": true,
    "message": "OK"
 }
 ```
---------------------
 
 ##### Results
 
@@ -646,8 +671,8 @@ GET https://grid/storage/:registration-id/:context/:id
 |`id`| Required|The name of the data that you want to read| string|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
 ```python
 import urllib2
 import json
@@ -663,8 +688,9 @@ jsonData = json.loads(returnData)
 
 print jsonData
 ```
----
-### Node.js
+
+###### Node.js
+
 ```js
 var request = require('request');
 
@@ -682,18 +708,19 @@ request(options, function (error, response, data) {
   }
 });
 ```
----
-### cURL
+
+###### cURL
+
 ```bash
 curl https://grid/registration/:registration-id/:context/:id \
 -X GET \
 -H 'Content-Type: application/json'
 ```
---------------------
+
 
 ##### Response examples
---------------------
-### 200
+
+###### 200
 ```json
 {
    "success": true,
@@ -703,7 +730,6 @@ curl https://grid/registration/:registration-id/:context/:id \
    }
 }
 ```
---------------------
 
 ##### Results
 
@@ -730,8 +756,8 @@ DELETE https://grid/storage/:registration-id/:context?/:id?
 |`id`| Optional|The name of the data that you want to delete| string|
 
 ##### Examples
---------------------
-### Python
+
+###### Python
 ```python
 import urllib2
 import json
@@ -747,8 +773,8 @@ jsonData = json.loads(returnData)
 
 print jsonData
 ```
----
-### Node.js
+
+###### Node.js
 ```js
 var request = require('request');
 
@@ -766,25 +792,25 @@ request(options, function (error, response, data) {
   }
 });
 ```
----
-### cURL
+
+###### cURL
 ```bash
 curl https://grid/registration/:registration-id \
 -X DELETE \
 -H 'Content-Type: application/json'
 ```
---------------------
+
 
 ##### Response examples
---------------------
-### 200
+
+###### 200
 ```json
 {
    "success": true,
    "message": "OK"
 }
 ```
---------------------
+
 
 ##### Results
 

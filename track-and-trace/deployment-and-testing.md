@@ -1,4 +1,4 @@
-# Deploy and test the track and trace demo
+# Deploy and Test the Track and Trace Demo
 
 **To start tracking data in the Tangle, deploy the application and use our graphical user interface to trace existing assets and create new ones.**
 
@@ -10,10 +10,10 @@ To test and deploy this application, you need the following:
 - An instance of a [Firebase server](https://firebase.google.com/)
 - Access to a [node's API](https://legacy.docs.iota.org/docs/api-reference/1.1/overview)
 
-## Deploy the track and trace app
+## Deploy the Track and Trace App
 
 To deploy this application on your local network, complete the instructions on [GitHub](https://github.com/iotaledger/trade-poc/blob/master/firebase_functions/README.md).
 
-## Test the track and trace app
+## Test the Track and Trace App
 
 When the app is running, you will find on-screen instructions for creating and tracing assets.

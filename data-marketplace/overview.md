@@ -52,28 +52,30 @@ See this website for a [demonstration of the application](https://data.iota.org/
 ## Additional resources
 
 ---------------
-#### Data Marketplace API documentation ####
-[Link](https://data.iota.org/static/docs)
+### [Data Marketplace API documentation](https://data.iota.org/static/docs)
 
 Interact with the Data Marketplace through the REST API.
+
 ---
-#### GitHub repository ####
-[Link](https://github.com/iotaledger/data-marketplace)
+### [GitHub Repository](https://github.com/iotaledger/data-marketplace)
 
 Read the code and some quickstart instructions to test this blueprint.
+
 ---
-#### Core JavaScript client library ####
-[Link](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
+### [Core JavaScript Client Library](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
 
 Learn how to use the iota.js client library to create, send, and receive transactions.
+
 ---
-#### MAM eloquently explained ####
-[Link](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e)
+
+### [MAM Eloquently Explained](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e)
 
 Masked Authenticated Messaging is a second layer data communication protocol that adds functionality to publish and control access to an encrypted data stream, over the Tangle. Learn more about how MAM works.
+
 ---
-#### MAM GitHub repository ####
-[Link](https://github.com/iotaledger/mam.client.js)
+
+### [MAM GitHub Repository](https://github.com/iotaledger/mam.client.js)
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
+
 ---------------

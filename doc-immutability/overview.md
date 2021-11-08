@@ -1,8 +1,8 @@
-# Document immutability
+# Document Immutability
 
 **Documents are an important means of transporting information and contracts between parties. Being able to reliably prove that a document has not been changed from an established state helps ensure trust between parties. As well as protect the parties. This blueprint describes a solution that automatically checks the signature of a previously signed document using the IOTA Tangle.**
 
-## Business case
+## Business Case
 
 Files on the Internet can be intercepted and changed while you're downloading them. To help you to make sure the file you downloaded to complete and correct, websites display a hash of the file for you to compare against the hash of the one you downloaded.
 
@@ -24,17 +24,17 @@ See this website for a [demonstration of a proof of existence application](https
 
 Unfortunately, you can't deploy your own local version of this demo. However, you can test the [proof of existence JavaScript library](https://legacy.docs.iota.org/docs/proof-of-existence/1.0/overview) that we built, using this blueprint.
 
-## Additional resources
+## Additional Resources
 
 ---------------
-#### GitHub repository ####
-[Link](https://github.com/iotaledger/poc-document-immutable-blueprint)
+### [GitHub Repository](https://github.com/iotaledger/poc-document-immutable-blueprint)
 
 Read the code and some quickstart instructions to test this blueprint.
+
 ---
-#### Proof of existence library ####
-[Link](https://www.npmjs.com/package/@iota/poex-tool)
+
+### [Proof of Existence Library](https://www.npmjs.com/package/@iota/poex-tool)
 
 A library that can be used for proof of existence scenarios. Used for the proof of existence application.
----
+
 ---------------

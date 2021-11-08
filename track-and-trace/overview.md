@@ -1,10 +1,10 @@
-# Track and trace
+# Track and Trace
 
 **Returnable assets that are used within distribution networks are often not returned to their original owners. This blueprint describes how the IBCS Group implemented a track and trace system for recovery of returnable assets, using the IOTA Tangle and other IOTA technologies.**
 
 We present the integration of this blueprint in [IBCS Group](https://www.ibcsgroup.com/) business processes. This blueprint is a guide for other organizations to replicate and adapt for their own scenarios and business processes.
 
-## Business case
+## Business Case
 
 A returnable asset is an asset that's used by many parties in the distribution and logistics chain.
 
@@ -73,21 +73,16 @@ This image presents a simplified stakeholders map and the different actions each
 
 See this website for a [demonstration of the application](http://tradedemo.iota.org).
  	 	 
-## Additional resources
+## Additional Resources
 
----------------
-#### Core JavaScript client library ####
-[Link](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
+### [Core JavaScript Client Library](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
----
-#### MAM eloquently explained ####
-[Link](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e)
+
+### [MAM Eloquently Explained](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e)
 
 Masked Authenticated Messaging is a second layer data communication protocol that adds functionality to publish and control access to an encrypted data stream, over the Tangle. Learn more about how MAM works.
----
-#### MAM GitHub repository ####
-[Link](https://github.com/iotaledger/mam.client.js)
+
+### [MAM GitHub Repository](https://github.com/iotaledger/mam.client.js)
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
----------------

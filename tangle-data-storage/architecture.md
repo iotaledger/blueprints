@@ -1,4 +1,4 @@
-# Application architecture
+# Application Architecture
 
 **The Tangle data storage application consists of two parts: A graphical user interface (GUI) written in React and a back-end API written in NodeJS.**
 
@@ -10,7 +10,7 @@ This blueprint uses the following architecture whereby clients upload files to t
 
 ![Data Storage PoC - IOTA/IPFS - Architecture](/img/blueprints/data-storage-ipfs.png)
 
-## Building blocks
+## Building Blocks
 
 The API server exposes two methods to the client:
 
@@ -32,7 +32,7 @@ Behind the scenes, the API does the following:
 
 ![Data Storage PoC - IOTA/IPFS - Store File](/img/blueprints/data-storage-store.png)
 
-### Uploading file content to the IPFS
+### Uploading File Content to the IPFS
 
 The `storeFile()` method takes a JSON object in the following format:
 
@@ -80,7 +80,7 @@ const ipfs = ipfsClient(config.ipfs);
 const addResponse = await ipfs.add(buffer);
 ```
 
-### Attaching the file data to the Tangle
+### Attaching the File Data to the Tangle
 
 The `add()` method returns the IPFS hash, which is combined with the other data in the JSON object before being attached to the Tangle in a transaction.
 
@@ -132,7 +132,7 @@ To retrieve a file and validate its contents, the client does the following:
 
 ![Data Storage PoC - IOTA/IPFS - Retrieve File](/img/blueprints/data-storage-retrieve.png)
 
-### Getting the file data from the Tangle
+### Getting the File Data From the Tangle
 
 To get the file data from the Tangle, we request the transaction from the IOTA node, using the transaction hash.
 
@@ -156,7 +156,7 @@ const payload = JSON.parse(ascii)
 
 The transaction hash is used to request the file from the IPFS node, using a public IPFS gateway such as [Cloudflare](https://cloudflare-ipfs.com/ipfs/).
 
-### Comparing the data
+### Comparing the Data
 
 Assuming the file was returned from the IPFS into a buffer, the file is hashed using a SHA256 algorithm and the resulting hash is compared to the one from the transaction's `signatureMessageFragment` field.
 
@@ -171,17 +171,17 @@ if (ipfsSha256 === payload.sha256) {
 }
 ```
 
-## Customization considerations
+## Customization Considerations
 
 If you want to use this blueprint in your own system, you should consider the following.
 
-### Data security
+### Data Security
 
 Because the IPFS is a distributed web, anyone who has the IPFS hash can download and read the contents of the file. 
 
 To prevent unauthorized entities from reading the data, you could encrypt it before uploading it to the IPFS node.
 
-### Alternative data storage solutions
+### Alternative Data Storage Solutions
 
 In this application, data is uploaded to an IPFS node, however the same principles apply if you were to upload to an alternative data storage solution.
 

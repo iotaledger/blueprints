@@ -2,7 +2,7 @@
 
 **Data boosts innovation for public and private sector organisations, and can be used to create new revenue streams. However, without a vendor-neutral way of verifying data, it can't be trusted. This blueprint uses the IOTA Tangle as an immutable data structure to verify the contents of a file in a third-party storage solution.**
 
-## Business case
+## Business Case
 
 Storing, sharing and trading data is a cornerstone of business in the connected world and boosts innovation for public and private sector organisations. However, if you can't trust that the data has not been altered, then the data becomes nearly useless. By using the IOTA Tangle, businesses and connected machines can trust in the security and privacy of the data they share.
 
@@ -31,19 +31,15 @@ See this website for a [demonstration of the application](https://ipfs.iota.org/
 
 ## Additional Resources
 
----------------
-#### GitHub repository ####
-[Link](https://github.com/iotaledger/poc-ipfs)
+
+### [GitHub repository](https://github.com/iotaledger/poc-ipfs)
 
 Read the code and some quickstart instructions to test this blueprint.
----
-#### Core JavaScript client library ####
-[Link](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
+
+### [Core JavaScript client library](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
----
-#### IPFS ####
-[Link](https://ipfs.io/)
+
+### [IPFS](https://ipfs.io/)
 
 This blueprint stores files on IPFS, then attaches the immutable, permanent IPFS links to the Tangle. This secures your content, without having to put the whole file in the Tangle.
----------------

@@ -1,4 +1,4 @@
-# Application architecture
+# Application Architecture
 
 **The Document immutability application consists of two parts: A graphical user interface (GUI), written in React and a back-end API, written in NodeJS.**
 
@@ -10,11 +10,11 @@ This blueprint uses the following architecture whereby the application takes fil
 
 ![Document immutability architecture](/img/blueprints/document-immutability-architecture.png)
 
-## Building blocks
+## Building Blocks
 
 The application allows users to upload their documents to the Tangle and then verify that they haven't changed.
 
-### Uploading a document
+### Uploading a Document
 
 When a user uploads a document, the application does the following:
 
@@ -25,7 +25,7 @@ When a user uploads a document, the application does the following:
 
 ![Document hashing](/img/blueprints/document-immutability-hashing.png)
 
-#### Hashing a document
+#### Hashing a Document
 
 The document is hashed, using one of the following hashing algorithms.
 
@@ -49,7 +49,7 @@ The document hash is put in the `signatureMessageFragment` field of a transactio
 
 The transaction hash in the Tangle is saved in the database so that the application can ask the IOTA node to return it when necessary.
 
-### Verifying a document
+### Verifying a Document
 
 When a user wants to verify a document, the application does the following:
 

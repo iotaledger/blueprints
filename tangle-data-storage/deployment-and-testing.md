@@ -1,4 +1,4 @@
-# Deploy and test the Tangle data storage demo
+# Deploy and Test the Tangle Data Storage Demo
 
 **To start storing data in the IPFS node and the Tangle, deploy the application and use our graphical user interface to upload file data, retrieve file data, and compare hashes to verify the contents.**
 
@@ -12,7 +12,7 @@ To test and deploy this application, you need the following:
 
 To edit this application for your own needs, you need knowledge of JavaScript, Node.js, and React.js.
 
-## Deploy the Tangle data storage app
+## Deploy the Tangle Data Storage App
 
 To deploy this application on your local network, complete the following instructions. These deployment instructions are also hosted on [GitHub](https://github.com/iotaledger/poc-ipfs/blob/master/README.md).
 
@@ -81,7 +81,7 @@ The file size limitation is only for the purposes of this blueprint. You can edi
 
 This page is the front end to the application, which you can use to test it.
 
-## Test the Tangle data storage app
+## Test the Tangle Data Storage App
 
 1. Select a file, and see that the other fields are automatically populated with metadata
 
@@ -101,6 +101,6 @@ This page is the front end to the application, which you can use to test it.
 
 This completes the full lifecycle for storing, retrieving, and validating a file. The file metadata, SHA256 hash and IPFS hash that are stored in a transaction in the Tangle are immutable. If the file contents that you retrieve from the IPFS node don't match the ones in the Tangle, then the contents of that file can no longer be trusted.
 
-## Next steps
+## Next Steps
 
 Try [running your own node](https://legacy.docs.iota.org/docs/node-software/1.0/overview) and configuring the application to connect to it.
