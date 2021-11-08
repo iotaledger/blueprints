@@ -26,7 +26,7 @@ module.exports = {
             label: 'Data Marketplace',
             items: ['data-marketplace/overview',
                 'data-marketplace/architecture',
-                'data-marketplace/deployment-and-testing.md',]
+                'data-marketplace/deployment-and-testing',]
 
         },
         {
