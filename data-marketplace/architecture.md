@@ -26,8 +26,8 @@ This backend has an [API]https://data.iota.org/static/docs) that allows you to m
 
 The API triggers cloud functions, which allow you to configure the following:
 
-- [`depth`](root://getting-started/1.1/first-steps/sending-transactions.md#choosing-a-depth)
-- [`minWeightMagnitude`](root://getting-started/1.1/first-steps/sending-transactions.md#doing-proof-of-work)
+- [`depth`](https://legacy.docs.iota.org/docs/getting-started/1.1/first-steps/sending-transactions#choosing-a-depth)
+- [`minWeightMagnitude`](https://legacy.docs.iota.org/docs/getting-started/1.1/first-steps/sending-transactions#doing-proof-of-work)
 - Whitelist page, where administrator users with predefined email addresses are allowed to administer devices
 
 ### Sensor MAM channel

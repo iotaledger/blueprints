@@ -52,7 +52,7 @@ Choose from one of the following cloud services:
 
 ### IOTA knowledge
 
-An understanding of [MAM channels](root://mam/1.0/overview.md).
+An understanding of [MAM channels](https://legacy.docs.iota.org/docs/mam/1.0/overview).
 
 ## Deploy the Data Marketplace app
 
@@ -125,7 +125,7 @@ Alternatively, you can [use the API to fund a wallet](https://data.iota.org/stat
 
 ### Fund an existing wallet
 
-If your wallet balance is low, you can fund it with more Devnet tokens by using the [IOTA faucet](root://getting-started/1.1/networks/devnet.md#faucets).
+If your wallet balance is low, you can fund it with more Devnet tokens by using the [IOTA faucet](https://legacy.docs.iota.org/docs/getting-started/1.1/networks/devnet#faucets).
 
 :::info:
 You can a new address to which to send the tokens by calling the [`getUser`](https://data.iota.org/static/docs#get-user) endpoint.

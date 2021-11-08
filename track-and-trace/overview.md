@@ -77,7 +77,7 @@ See this website for a [demonstration of the application](http://tradedemo.iota.
 
 ---------------
 #### Core JavaScript client library ####
-[Link](root://core/1.0/getting-started/get-started-js.md)
+[Link](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
 ---

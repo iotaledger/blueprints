@@ -16,7 +16,7 @@ A common requirement for nearly all use cases or applications is that data must 
 However, the Tangle is not a database. The Tangle is an immutable, distributed ledger which allows you to store a hash of data and a pointer to its location in third-party data storage.
 
 :::info:
-Although permanent storage in the Tangle isn't currently possible, the IOTA Foundation are developing a solution called [Chronicle](root://chronicle/1.1/overview.md).
+Although permanent storage in the Tangle isn't currently possible, the IOTA Foundation are developing a solution called [Chronicle](https://legacy.docs.iota.org/docs/chronicle/1.1/overview).
 :::
 
 ### Solution
@@ -38,7 +38,7 @@ See this website for a [demonstration of the application](https://ipfs.iota.org/
 Read the code and some quickstart instructions to test this blueprint.
 ---
 #### Core JavaScript client library ####
-[Link](root://core/1.0/getting-started/get-started-js.md)
+[Link](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
 ---
