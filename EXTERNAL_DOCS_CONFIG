@@ -1,0 +1,10 @@
+[
+    "@docusaurus/plugin-content-docs",
+    {
+    id: "blueprints",
+    path: "external/blueprints/",
+    routeBasePath: "blueprints",
+    sidebarPath: require.resolve("./external/blueprints/sidebars.js"),
+    remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
+    }
+],

@@ -1,0 +1,7 @@
+            {
+              label: "Blue Prints",
+              to: "blueprints/welcome",
+              className: "icon-identity",
+              activeBaseRegex: 'blueprints/.*'
+            },
+            
