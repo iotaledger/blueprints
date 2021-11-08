@@ -2,7 +2,7 @@
 
 **To start using the P2P energy grid app, deploy your own application.**
 
-:::info:
+:::info
 Deployment instructions are not yet available for this blueprint.
 :::
 
