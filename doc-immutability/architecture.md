@@ -19,23 +19,14 @@ The application allows users to upload their documents to the Tangle and then ve
 When a user uploads a document, the application does the following:
 
 1. Hash the document
-2. Save the document in a database
-3. Attach the hash to the Tangle
-4. Save the transaction hash to the database
+2. Attach the hash to the Tangle
+3. Return the message-id to the user
 
 ![Document hashing](/img/blueprints/document-immutability-hashing.png)
 
 #### Hashing a Document
 
-The document is hashed, using one of the following hashing algorithms.
-
-We recommend using at least a 128-bit hashing algorithm such as the following:
-
-- SHA256 - 2<sup>128</sup>
-- SHA512 - 2<sup>256</sup>
-- SHA-3	- Up to 2<sup>512</sup>
-- BLAKE2s - 2<sup>128</sup>
-- BLAKE2b - 2<sup>256</sup>
+The document is hashed, using the SHA256-hash function. We recommend using at least a 128-bit hashing algorithm.
 
 #### Saving a document
 
