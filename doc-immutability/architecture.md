@@ -16,24 +16,27 @@ The application uses the [Proof of Existence Library](https://www.npmjs.com/pack
 
 ### Uploading a Proof of Existence of a Document
 
-When a user selects a document to create a Proof of Existence for, the application does the following:
+When a user wants to create a Proof of Existence for a document, the application process is the following:
 
-1. Hash the document
-2. Include the hash of the document in a message and attach it to the Tangle
-3. Return the message-id to the user
+1. The user provides the document 
+2. The document is hashed
+3. Include the hash of the document in a message and attach it to the Tangle
+4. Return the message-id to the user
 
-![Document hashing](/img/blueprints/document-immutability-hashing.png)
+![Document hashing](/img/blueprints/document-immutability-signing.png)
 
 The document is hashed, using the SHA256-hash function. We recommend using at least a 128-bit hashing algorithm.
 The hash is inserted into an `IndexationPayload`-message that is sent to a selected IOTA node, which proceeds to attach it to the Tangle. Once the node attached the message, it returns the message-id, which the user can then store.
 
 ### Verifying a Document
 
-When a user wants to verify a provided document, the process in the web application is the following:
+When a user wants to verify the integrity of a document, the process in the web application is the following:
 
-1. The user provides the message-id referencing the Proof of Existence
+1. The user provides the document and the message-id referencing the Proof of Existence
 2. The web application fetches the Proof of Existence from the message of the Tangle by querying the selected node
-3. Hash the document and compare the results
+3. The document is hashed 
+4. The result is compared to the fetched Proof of Existence
+5. The verification result is returned to the user
 
 In order to access the Proof of Existence, the message-id, which references the message in the Tangle, has to be provided
 An IOTA node is then queried to provide the message, which contains the document hash in its `data` field of the `IndexationPayload` of the message.
@@ -43,4 +46,4 @@ If the two hashes match, the file is unchanged.
 
 if the hashes do not match, we know that the file has been changed between now and the time it was attached to the Tangle.
 
-![Document verification](/img/blueprints/document-immutability-verification2.png)
+![Document verification](/img/blueprints/document-immutability-verification.png)

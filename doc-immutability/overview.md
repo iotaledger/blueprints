@@ -5,18 +5,18 @@
 
 ### Challenges
 
-Ensuring the integrity of digital documents is currently mostly done by storing them on some trusted database or by physically printing the documents. However in a trustless and efficient environment, this is far from optimal.
+Ensuring the integrity of digital documents is currently mostly done by storing them in some trusted database or by physically printing the documents. However, in a trustless and efficient environment, this is far from optimal.
 A step in the right direction is e.g. displaying data fingerprints, so called hashes, on a website from which a file is being downloaded, which can then manually be compared to the local copy's fingerprint by a technically versed user. 
 However, this procedure is too technically challenging and time consuming for most users. Additionaly, displaying a hash on some website is far from fully secure, as the centralized database of that website is also subject to change. For example, in 2016, hackers [successfully put a backdoor](https://blog.linuxmint.com/?p=2994) into an ISO file of a Linux distribution called Mint. As they also managed to get access to the website, they were able to adjust the hashes being displayed on the website too, thereby completely bypassing this security mechanism.
 
-Also, in a scenario not containing some server, but two parties agreeing on a contract, a simple tool should exist that anchors the integrity of a document in a distributed storage. 
+Also, in a scenario not containing some centralized server, but two parties agreeing on a contract, a simple tool should exist that anchors the integrity of a document in a distributed storage. 
 
 
 ### Solution
 
 In this blueprint, we leverage the distributed ledger of the IOTA Tangle to immutably store data fingerprints of files, thereby providing a way to verify the integrity of a document by not relying on a centralized instance. 
 This enables users to prove that a document has not been tampered with since the data fingerprint ("Proof of Existence") has been stored on the Tangle.
-To verify a document in our web application, users can provide a file and a message-id, used to locate the data fingerprint embedded in a message of the Tangle. The provided file is locally hashed on compared with the fetched fingerprint stored on the Tangle.
+To verify a document in our web application, users can provide a file and a message-id, used to locate the data fingerprint embedded in a message of the Tangle. The provided file is locally hashed and compared with the fetched fingerprint stored on the Tangle.
 Users can also publish new data fingerprints of a file and receive a message-id that references the Proof of Existence in the Tangle.
 Additionally, the users remain in complete control of the document, meaning that the document itself is never exposed to the the public. The hash that is stored on the Tangle can be used to verify the integrity of the document, however the underlying document can not be derived from it. 
 
@@ -25,7 +25,7 @@ Additionally, the users remain in complete control of the document, meaning that
 
 See this website for a [demonstration of a Proof of Existence application](https://iota-poex.dag.sh/).
 
-Unfortunately, you can't deploy your own local version of this demo. However, you can test the [Proof of Existence JavaScript library](https://legacy.docs.iota.org/docs/proof-of-existence/1.0/overview) that we built, using this blueprint.
+Check the [GitHub Repository](https://github.com/iotaledger/poc-document-immutable-blueprint) for instructions on how to set up a local version of this blueprint.
 
 ## Additional Resources
 
