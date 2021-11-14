@@ -8,7 +8,6 @@ To test and deploy this application, you need the following:
 
 - Node.js installed on your device
 - An instance of a [Firebase server](https://firebase.google.com/)
-- Access to a [node's API](https://legacy.docs.iota.org/docs/api-reference/1.1/overview)
 
 ## Deploy the Track and Trace App
 

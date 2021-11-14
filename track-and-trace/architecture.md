@@ -53,15 +53,13 @@ Before setting up the channel, we recommended setting the channel mode to `restr
 ```javascript
 // create a new restricted channel 
 const createNewChannel = async (payload, secretKey) => { 
-  const defaultMamState = Mam.changeMode(mamState, 'restricted', secretKey);   
-  updateMamState(defaultMamState); 
-  const mamData = await publish(payload); 
-  return mamData; 
+    const channelState = createChannel(generateSeed(81), 2, 'restricted', secretKey)
+  return channelState; 
 };
 ```
 ### Attaching the Asset Data to the Tangle
 
-After creating the MAM channel, we can publish the asset information to the IOTA Tangle, using the `Mam.attach()` method.
+After creating the MAM channel, we can publish the asset information to the IOTA Tangle, using the `mamAttach()` method.
 
 ```javascript
 // store new messages for each new asset and for each change of custody 
@@ -69,15 +67,15 @@ After creating the MAM channel, we can publish the asset information to the IOTA
 const publish = async data => { 
   try { 
     // Create the MAM payload
-    const trytes = asciiToTrytes(JSON.stringify(data)); 
-    const message = Mam.create(mamState, trytes); 
+    const trytes = TrytesHelper.fromAscii(JSON.stringify(payload))
+    const mamMessage = createMessage(channelState, trytes) 
  
     // Save the new state of the MAM channel
-    updateMamState(message.state); 
+    channelState.root = mamMessage.root;
  
     // Attach the payload
-    await Mam.attach(message.payload, message.address);  
-    return { root: message.root, state: message.state }; 
+    await mamAttach(node, mamMessage, "TRACKANDTRACE");
+    return channelState;
   } catch (error) { 
     console.log('MAM publish error', error); 
     return null; 
@@ -99,41 +97,20 @@ The `createItem()` function is used to save the necessary data in the database w
 ![Track and Trace](/img/blueprints/track-and-trace-architecture-message-exchange.png)
 
 ```javascript
-export const createItem = (eventBody, channel, secretKey, userId) => { 
-  // Create item reference 
-  const itemsRef = getItemReference(eventBody.itemId);   
-  appendItemToNewUser(userId, eventBody.itemId);    
-  
-  itemsRef.set({     
-      ...eventBody,     
-      mam: {       
-          root: channel.root,       
-          seed: channel.state.seed,       
-          next: channel.state.channel.next_root,       
-          start: channel.state.channel.start,
-          secretKey, 
-    },
-  });
-};
+export const createItem = (eventBody, mam) => {
+  const item = {
+    ...eventBody,
+    mam
+  };
 ```
 Then, when a new tracker takes custody of the asset, that tracker updates the `assetCustodianID`, `location`, `time`, and `status` fields and attaches it to the same MAM channel, using the `updateItem()` function to save the new asset data to the database.
 
 ```javascript
-export const updateItem = (eventBody, mam, newItemData, user) => { 
-  // Create reference 
-  const itemsRef = getItemReference(eventBody.itemId); 
-   
-   itemsRef.update({     
-       ...eventBody,     
-       mam: {       
-           root: mam.root,       
-           secretKey: mam.secretKey,       
-           seed: newItemData.state.seed,       
-           next: newItemData.state.channel.next_root,       
-           start: newItemData.state.channel.start, 
-    }, 
-  }); 
-};
+export const updateItem = (eventBody, mam) => {
+  const item = {
+    ...eventBody,
+    mam
+  };
 ```
 
 ## Customization Considerations

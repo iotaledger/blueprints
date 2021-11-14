@@ -75,7 +75,7 @@ See this website for a [demonstration of the application](http://tradedemo.iota.
  	 	 
 ## Additional Resources
 
-### [Core JavaScript Client Library](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
+### [Client Library](https://wiki.iota.org/iota.rs/welcome)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
 
@@ -83,6 +83,6 @@ Learn how to use the JavaScript client library to create, send, and receive tran
 
 Masked Authenticated Messaging is a second layer data communication protocol that adds functionality to publish and control access to an encrypted data stream, over the Tangle. Learn more about how MAM works.
 
-### [MAM GitHub Repository](https://github.com/iotaledger/mam.client.js)
+### [MAM GitHub Repository](https://github.com/iotaledger/mam.js)
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
