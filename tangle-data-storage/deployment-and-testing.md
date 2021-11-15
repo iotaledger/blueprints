@@ -62,7 +62,7 @@ To deploy this application on your local network, complete the following instruc
     |:---|:-----|:----|
     |`apiEndpoint` (required)|Set this field to the URL of the API server that you just started|By default, the API listens on the following URL: `http:localhost:4000`|
     |`ipfsGateway`|Set this field to the IPFS gateway that you want to use to get files from the IPFS network|The default gateway is `https://ipfs.io/ipfs/:hash`|
-    |`tangleExplorer`| Set these fields to the URL of the Tangle explorer that you want to use to search for transactions and bundles on the front end|The default Tangle explorer is `https://utils.iota.org`|
+    |`tangleExplorer`| Set these fields to the URL of the Tangle explorer that you want to use to search for messages on the front end|The default Tangle explorer is `https://explorer.iota.org`|
     |`googleAnalyticsId`| If you have Google Analytics set up for your client, set this field to your Google Analytics ID||
 
 9. Run the client application
@@ -73,7 +73,7 @@ To deploy this application on your local network, complete the following instruc
 
 When the client connects to the API, the following page will be opened in your default web browser:
 
-![Upload File for IOTA IPFS Data Storage PoC](/img/blueprints/data-storage-upload.png)
+![Upload File for IOTA IPFS Data Storage PoC](../static/img/blueprints/data-storage-upload.png)
 
 :::info:
 The file size limitation is only for the purposes of this blueprint. You can edit this blueprint to allow any file size.
@@ -85,22 +85,22 @@ This page is the front end to the application, which you can use to test it.
 
 1. Select a file, and see that the other fields are automatically populated with metadata
 
-    ![Upload File for IOTA IPFS Data Storage PoC - Populated](/img/blueprints/data-storage-upload2.png)
+    ![Upload File for IOTA IPFS Data Storage PoC - Populated](../static/img/blueprints/data-storage-upload2.png)
 
 2. Click **Upload** to store the metadata on the IPFS node and the Tangle. If everything went well, you should see a confirmation message.
 
-    ![Uploaded File for IOTA IPFS Data Storage PoC](/img/blueprints/data-storage-upload-finished.png)
+    ![Uploaded File for IOTA IPFS Data Storage PoC](../static/img/blueprints/data-storage-upload-finished.png)
 
 3. To validate a file, go to the Retrieve File page.
 
-    ![Retrieve File for IOTA IPFS Data Storage PoC](/img/blueprints/data-storage-upload-retrieve.png)
+    ![Retrieve File for IOTA IPFS Data Storage PoC](../static/img/blueprints/data-storage-upload-retrieve.png)
 
-4. Enter a transaction hash and click **RETRIEVE**. The transaction hash will be passed to the API, which will get the IPFS hash from the transaction's `signatureMessageFragment` field, which is used to download the file and validate its SHA256 hash against the one stored in the transaction.
+4. Enter a message ID and click **RETRIEVE**. The message ID will be passed to the API, which will get the IPFS hash from the message's `IndexationPayload` field, which is used to download the file and validate its SHA256 hash against the one stored in the message.
 
-    ![Retrieve File for IOTA IPFS Data Storage PoC](/img/blueprints/data-storage-upload-validated.png)
+    ![Retrieve File for IOTA IPFS Data Storage PoC](../static/img/blueprints/data-storage-upload-validated.png)
 
 This completes the full lifecycle for storing, retrieving, and validating a file. The file metadata, SHA256 hash and IPFS hash that are stored in a transaction in the Tangle are immutable. If the file contents that you retrieve from the IPFS node don't match the ones in the Tangle, then the contents of that file can no longer be trusted.
 
 ## Next Steps
 
-Try [running your own node](https://legacy.docs.iota.org/docs/node-software/1.0/overview) and configuring the application to connect to it.
+Try [running your own node](https://chrysalis.docs.iota.org/node_software) and configuring the application to connect to it.
