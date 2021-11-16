@@ -61,6 +61,10 @@ To deploy your own data marketplace, follow the instructions in these blog posts
 1. https://medium.com/@lexerr/47b608c527c9
 2. https://medium.com/@lexerr/b33d9856c852
 
+:::info
+The blog posts are outdated. Some of the firebase related setup might have changed. Also the usage of the Trinity wallet is not longer supported. The new [Firefly wallet](https://firefly.iota.org/) is recommended to use.
+:::
+
 ## Test the Data Marketplace App
 
 Instead of deploying your own data marketplace, you can test our demo app by adding your own device to it.
@@ -106,6 +110,10 @@ Instead of deploying your own data marketplace, you can test our demo app by add
     Please note that some computation is done for every data package, which might take up to 60 seconds. Please take this into account and do not interrupt the script while running this operation.
 
 6. See the [blog post](https://medium.com/iotatangle/the-iota-data-marketplace-a-tech-intro-part-3-eea5cbcd1eb7/) to learn more about publishing sensor data to IOTA Tangle
+
+:::info
+The blog posts are outdated. Some of the firebase related setup might have changed. Also the usage of the Trinity wallet is not longer supported. The new [Firefly wallet](https://firefly.iota.org/) is recommended to use.
+:::
 
 ### Create and Fund a New Wallet
 
