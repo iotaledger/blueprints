@@ -8,7 +8,7 @@ Running an open source project, like any human endeavor, involves uncertainty an
 
 This blueprint uses the following architecture whereby clients upload files to the API server, which sends the files to an InterPlanetary File System (IPFS) node and attaches the IPFS hashes to messages in the Tangle.
 
-![Data Storage PoC - IOTA/IPFS - Architecture](../static/img/blueprints/data-storage-ipfs.png)
+![Data Storage PoC - IOTA/IPFS - Architecture](/img/blueprints/data-storage-ipfs.png)
 
 ## Building Blocks
 
@@ -30,7 +30,7 @@ Behind the scenes, the API does the following:
 - Upload the file content to IPFS, which returns the IPFS hash
 - Attach the file metadata, SHA256/SHA3 hash, and IPFS hash to the Tangle in a message, and return the message id to the client
 
-![Data Storage PoC - IOTA/IPFS - Store File](../static/img/blueprints/data-storage-store.png)
+![Data Storage PoC - IOTA/IPFS - Store File](/img/blueprints/data-storage-store.png)
 
 ### Uploading File Content to the IPFS
 
@@ -135,7 +135,7 @@ To retrieve a file and validate its contents, the client does the following:
 - Get the file contents from IPFS using the returned IPFS hash
 - Perform a SHA256/SHA3 hash on the file data, and compare the calculated SHA256/SHA3 with the one returned from the Tangle
 
-![Data Storage PoC - IOTA/IPFS - Retrieve File](../static/img/blueprints/data-storage-retrieve.png)
+![Data Storage PoC - IOTA/IPFS - Retrieve File](/img/blueprints/data-storage-retrieve.png)
 
 ### Getting the File Data From the Tangle
 
