@@ -14,6 +14,11 @@ This blueprint uses the following architecture whereby the application takes fil
 
 The application uses the [Proof of Existence Library](https://www.npmjs.com/package/@iota/poex-tool), a basic library that enables users to publish and verify Proof of Existences. With a valid Proof of Existence, users can be certain that the given document has not been changed since the Proof of Existence has been published on the IOTA Tangle, thereby ensuring data integrity.
 
+## Legacy Network Backwards-Compatibility
+
+As this is one of the earlier projects, it has been up and running long before the Chrysalis network. While new PoEs are of course being published to Chrysalis, proofs issued on the Legacy network are still verifiable in the application, as the underlying Proof of Existence library provides methods for both networks.
+The application automatically detects if the provided message-id is from the Legacy or the Chrysalis network and adjusts its procedure accordingly.
+
 ### Uploading a Proof of Existence of a Document
 
 When a user wants to create a Proof of Existence for a document, the application process is the following:
@@ -26,7 +31,7 @@ When a user wants to create a Proof of Existence for a document, the application
 ![Document hashing](/img/blueprints/document-immutability-signing.png)
 
 The document is hashed, using the SHA256-hash function. We recommend using at least a 128-bit hashing algorithm.
-The hash is inserted into an `IndexationPayload`-message that is sent to a selected IOTA node, which proceeds to attach it to the Tangle. Once the node attached the message, it returns the message-id, which the user can then store.
+The hash is inserted into an `IndexationPayload`-message that is sent to the selected IOTA node, which proceeds to attach it to the Tangle. Once the node attached the message, it returns the message-id, which the user can then store.
 
 ### Verifying a Document
 
@@ -38,12 +43,11 @@ When a user wants to verify the integrity of a document, the process in the web 
 4. The result is compared to the fetched Proof of Existence
 5. The verification result is returned to the user
 
-In order to access the Proof of Existence, the message-id, which references the message in the Tangle, has to be provided
-An IOTA node is then queried to provide the message, which contains the document hash in its `data` field of the `IndexationPayload` of the message.
-Now we have the user provided document and a Proof of Existence that was attached to the Tangle. Now, simply the document is hashed and compared with the Proof of Existence-hash.
+In order to access the Proof of Existence, the message-id, which references the message in the Tangle, has to be provided.
+An IOTA node is then queried to return the message, which contains the document hash in its `data` field of the `IndexationPayload` of the message.
+Now, the document is simply hashed and compared with the Proof of Existence-hash.
 
 If the two hashes match, the file is unchanged.
-
-if the hashes do not match, we know that the file has been changed between now and the time it was attached to the Tangle.
+if the hashes do not match, we know that the file has been changed between now and the time its Proof of Existence was attached to the Tangle.
 
 ![Document verification](/img/blueprints/document-immutability-verification.png)

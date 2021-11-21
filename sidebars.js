@@ -44,7 +44,8 @@ module.exports = {
           label: 'Overview',
           id: 'doc-immutability/overview',
         },
-        'doc-immutability/architecture'],
+        'doc-immutability/architecture',
+        'doc-immutability/deployment-and-testing'],
     },
     {
       type: 'category',
