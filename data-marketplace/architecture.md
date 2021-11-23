@@ -24,11 +24,7 @@ This backend has an [API]https://data.iota.org/static/docs) that allows you to m
 
 #### Cloud Functions
 
-The API triggers cloud functions, which allow you to configure the following:
-
-- [`depth`](https://legacy.docs.iota.org/docs/getting-started/1.1/first-steps/sending-transactions#choosing-a-depth)
-- [`minWeightMagnitude`](https://legacy.docs.iota.org/docs/getting-started/1.1/first-steps/sending-transactions#doing-proof-of-work)
-- Whitelist page, where administrator users with predefined email addresses are allowed to administer devices
+The API triggers cloud functions, which allow you to configure a Whitelist page, where administrator users with predefined email addresses are allowed to administer devices
 
 ### Sensor MAM Channel
 
@@ -41,7 +37,7 @@ For each of your sensors, you have to define the correct data fields, which will
 #### Example Sensors
 
 - [Netatmo Weather Station](https://www.netatmo.com/en-us/weather)
-- [Bosch XDK](https://xdk.bosch-connectivity.com/) 
+- [Bosch XDK](https://developer.bosch.com/products-and-services/sdks/xdk) 
 - [Nordic Semiconductor Thingy:52](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/Nordic-Thingy-52-App)
 - [Raspberry Pi with a sensor kit](https://www.adafruit.com/product/2733) 
 

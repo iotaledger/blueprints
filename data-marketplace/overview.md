@@ -62,9 +62,9 @@ Interact with the Data Marketplace through the REST API.
 Read the code and some quickstart instructions to test this blueprint.
 
 ---
-### [Core JavaScript Client Library](https://legacy.docs.iota.org/docs/core/1.0/getting-started/get-started-js)
+### [Client Library](https://wiki.iota.org/iota.rs/welcome)
 
-Learn how to use the iota.js client library to create, send, and receive transactions.
+Learn how to use the iota client library to create, send, and receive transactions.
 
 ---
 
@@ -74,7 +74,7 @@ Masked Authenticated Messaging is a second layer data communication protocol tha
 
 ---
 
-### [MAM GitHub Repository](https://github.com/iotaledger/mam.client.js)
+### [MAM GitHub Repository](https://github.com/iotaledger/mam.js)
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
 

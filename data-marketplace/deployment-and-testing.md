@@ -10,7 +10,7 @@ To submit sensor data to the Data Marketplace, you must have the following:
 
 - A sensor or device that generates data such as the following:
     - [Netatmo Weather Station](https://www.netatmo.com/en-us/weather)
-    - [Bosch XDK](https://xdk.bosch-connectivity.com/) 
+    - [Bosch XDK](https://developer.bosch.com/products-and-services/sdks/xdk) 
     - [Nordic Semiconductor Thingy:52](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/Nordic-Thingy-52-App)
     - [Raspberry Pi with a sensor kit](https://www.adafruit.com/product/2733) 
 
@@ -20,7 +20,7 @@ To submit sensor data to the Data Marketplace, you must have the following:
 
 - [Node.js](https://nodejs.org/)
 
-- [MAM (masked authenticated messaging)](https://github.com/iotaledger/mam.client.js)
+- [MAM (masked authenticated messaging)](https://github.com/iotaledger/mam.js)
 
 Choose from one of the following cloud services:
 
@@ -52,7 +52,7 @@ Choose from one of the following cloud services:
 
 ### IOTA Knowledge
 
-An understanding of [MAM channels](https://legacy.docs.iota.org/docs/mam/1.0/overview).
+An understanding of [MAM channels](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e/).
 
 ## Deploy the Data Marketplace App
 
@@ -60,6 +60,10 @@ To deploy your own data marketplace, follow the instructions in these blog posts
 
 1. https://medium.com/@lexerr/47b608c527c9
 2. https://medium.com/@lexerr/b33d9856c852
+
+:::info
+The blog posts are outdated. Some of the firebase related setup might have changed. Also the usage of the Trinity wallet is not longer supported. The new [Firefly wallet](https://firefly.iota.org/) is recommended to use.
+:::
 
 ## Test the Data Marketplace App
 
@@ -103,13 +107,20 @@ Instead of deploying your own data marketplace, you can test our demo app by add
 
     By default the script runs in debug mode, which means that no data is published. All captured data is printed out in the console, so you can verify and adjust it. Once the payload looks good, you can disable debug mode by setting the debug variable to false in the `config.json` file (see screenshot below), and let data be published.
 
-    Please note that proof of work is done for every data package, which might take up to 60 seconds depending on your hardware. Please take this into account and do not interrupt the script while running this operation.
+    Please note that some computation is done for every data package, which might take up to 60 seconds. Please take this into account and do not interrupt the script while running this operation.
 
-6. See the [blog post]​(https://blog.iota.org/the-iota-data-marketplace-a-tech-intro-part-3-eea5cbcd1eb7) to learn more about publishing sensor data to IOTA Tangle
+6. See the [blog post](https://medium.com/iotatangle/the-iota-data-marketplace-a-tech-intro-part-3-eea5cbcd1eb7/) to learn more about publishing sensor data to IOTA Tangle
+
+:::info
+The blog posts are outdated. Some of the firebase related setup might have changed. Also the usage of the Trinity wallet is not longer supported. The new [Firefly wallet](https://firefly.iota.org/) is recommended to use.
+:::
 
 ### Create and Fund a New Wallet
 
-You can fund a device's wallet with free IOTA tokens. We usually transfer between 100 Ki and 1 Mi of Devnet tokens for free to your new device's wallet.
+You can fund a device's wallet with free IOTA tokens. We usually transfer a predefined amount of Devnet tokens for free to your new device's wallet.
+
+When you check the balance of your address on the [IOTA Explorer](https://explorer.iota.org/devnet) you will notice that the balance displayed there is higher than on the data marketplace. This difference is due to the **Dust Protection** deployed with the Chrysalis Update which limits micro transactions. To bypass this limitation we will transfer in addition to the usable tokens 1 Mi hidden tokens to your account. You will not be able to use those tokens. For further reading on dust protection 
+have a look at [Dust protection on the IOTA Network](https://medium.com/@wernerderchamp/dust-protection-on-the-iota-network-an-eli12-d8ca567a2d36).
 
 :::info:
 Devnet tokens can't be used on the Mainnet or exchanged on any cryptocurrency exchange.
@@ -125,11 +136,7 @@ Alternatively, you can [use the API to fund a wallet](https://data.iota.org/stat
 
 ### Fund an Existing Wallet
 
-If your wallet balance is low, you can fund it with more Devnet tokens by using the [IOTA faucet](https://legacy.docs.iota.org/docs/getting-started/1.1/networks/devnet#faucets).
-
-:::info:
-You can a new address to which to send the tokens by calling the [`getUser`](https://data.iota.org/static/docs#get-user) endpoint.
-:::
+If your wallet balance is low and you try to buy a sensor that costs more than your balance the 'Fund' button will reappear to fund your wallet once again.
 
 ### Query a Data Stream
 
