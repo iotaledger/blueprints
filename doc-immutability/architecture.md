@@ -25,7 +25,7 @@ When a user wants to create a Proof of Existence for a document, the application
 
 1. The user provides the document.
 2. The document is hashed
-3. Include the hash of the document in a message and attach it to the Tangle
+3. The application includes the hash of the document in a message and attaches it to the Tangle.
 4. Return the message-id to the user
 
 [![Document hashing](/img/blueprints/document-immutability-signing.png)](/img/blueprints/document-immutability-signing.png)
