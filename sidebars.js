@@ -49,18 +49,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'P2P Energy Grid',
-      items: [
-        {
-          type: 'doc',
-          label: 'Overview',
-          id: 'p2p-energy/overview',
-        },
-        'p2p-energy/architecture',
-        'p2p-energy/deployment-and-testing'],
-    },
-    {
-      type: 'category',
       label: 'Tangle Data Storage',
       items: [
         {
