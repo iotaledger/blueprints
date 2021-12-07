@@ -28,7 +28,7 @@ When a user wants to create a Proof of Existence for a document, the application
 3. Include the hash of the document in a message and attach it to the Tangle
 4. Return the message-id to the user
 
-![Document hashing](/img/blueprints/document-immutability-signing.png)
+[![Document hashing](/img/blueprints/document-immutability-signing.png)](/img/blueprints/document-immutability-signing.png)
 
 The document is hashed, using the SHA256-hash function. We recommend using at least a 128-bit hashing algorithm.
 The hash is inserted into an `IndexationPayload`-message that is sent to the selected IOTA node, which proceeds to attach it to the Tangle. Once the node attached the message, it returns the message-id, which the user can then store.
