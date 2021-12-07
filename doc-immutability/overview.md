@@ -38,6 +38,6 @@ Access the code base and quickstart instructions to test this blueprint.
 
 ### [Proof of Existence Library](https://www.npmjs.com/package/@iota/poex-tool)
 
-A library that can be used for Proof of Existence scenarios that is also used in this blueprint.
+A library you can use for Proof of Existence scenarios that is also used in this blueprint.
 
 ---------------
