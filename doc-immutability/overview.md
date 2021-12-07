@@ -25,7 +25,7 @@ Additionally, as the Tangle never exposes the document to the public, the users 
 
 See this website for a [demonstration of a Proof of Existence application](https://iota-poex.dag.sh/).
 
-Check the [GitHub Repository](https://github.com/iotaledger/poc-document-immutable-blueprint) for instructions on how to set up a local version of this blueprint.
+You can find instructions on how to set up a local version of this blueprint in the [official GitHub repository](https://github.com/iotaledger/poc-document-immutable-blueprint).
 
 ## Additional Resources
 
