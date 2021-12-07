@@ -18,7 +18,7 @@ In this blueprint, we leverage the distributed ledger of the IOTA Tangle to immu
 This enables users to prove that a document has not been tampered with since the data fingerprint ("Proof of Existence") has been stored on the Tangle.
 To verify a document in our web application, users can provide a file and a message-id, used to locate the data fingerprint embedded in a message of the Tangle. The provided file is locally hashed and compared with the fetched fingerprint stored on the Tangle.
 Users can also publish new data fingerprints of a file and receive a message-id that references the Proof of Existence in the Tangle.
-Additionally, the users remain in complete control of the document, meaning that the document itself is never exposed to the the public. The hash that is stored on the Tangle can be used to verify the integrity of the document, however the underlying document can not be derived from it. 
+Additionally, as the Tangle never exposes the document to the public, the users remain in complete control of the document. An application can use the hash stored on the Tangle to verify the document's integrity, but the underlying document can not be derived from it. 
 
 
 ## Demo
