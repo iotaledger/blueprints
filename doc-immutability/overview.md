@@ -32,7 +32,7 @@ You can find instructions on how to set up a local version of this blueprint in 
 ---------------
 ### [GitHub Repository](https://github.com/iotaledger/poc-document-immutable-blueprint)
 
-Access the code base and read some quickstart instructions to test this blueprint.
+Access the code base and quickstart instructions to test this blueprint.
 
 ---
 
