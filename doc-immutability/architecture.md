@@ -23,7 +23,7 @@ The application automatically detects if the provided message-id is from the Leg
 
 When a user wants to create a Proof of Existence for a document, the application process is the following:
 
-1. The user provides the document 
+1. The user provides the document.
 2. The document is hashed
 3. Include the hash of the document in a message and attach it to the Tangle
 4. Return the message-id to the user
