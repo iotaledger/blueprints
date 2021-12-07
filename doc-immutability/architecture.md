@@ -1,6 +1,6 @@
 # Application Architecture
 
-**The Document immutability application consists of two parts: A graphical user interface (GUI), written in React and a back-end API, written in NodeJS.**
+**The Document immutability application is simply a graphical user interface (GUI), written in React with some additional functionality provided by the poex-tool**
 
 :::warning:Disclaimer
 Running an open source project, like any human endeavor, involves uncertainty and trade-offs. We hope the architecture described below helps you to deploy similar systems, but it may include mistakes, and can’t address every situation. If you have any questions about your project, we encourage you to do your own research, seek out experts, and discuss them with the IOTA community.
@@ -12,73 +12,42 @@ This blueprint uses the following architecture whereby the application takes fil
 
 ## Building Blocks
 
-The application allows users to upload their documents to the Tangle and then verify that they haven't changed.
+The application uses the [Proof of Existence Library](https://www.npmjs.com/package/@iota/poex-tool), a basic library that enables users to publish and verify Proof of Existences. With a valid Proof of Existence, users can be certain that the given document has not been changed since the Proof of Existence has been published on the IOTA Tangle, thereby ensuring data integrity.
 
-### Uploading a Document
+## Legacy Network Backwards-Compatibility
 
-When a user uploads a document, the application does the following:
+As this is one of the earlier projects, it has been up and running long before the Chrysalis network. While new PoEs are published to Chrysalis, proofs issued on the Legacy network are still verifiable in the application, as the underlying Proof of Existence library provides methods for both networks.
+The application automatically detects if the provided message-id is from the Legacy or the Chrysalis network and adjusts its procedure accordingly.
 
-1. Hash the document
-2. Save the document in a database
-3. Attach the hash to the Tangle
-4. Save the transaction hash to the database
+### Uploading a Proof of Existence of a Document
 
-![Document hashing](/img/blueprints/document-immutability-hashing.png)
+When a user wants to create a Proof of Existence for a document, the application process is the following:
 
-#### Hashing a Document
+1. The user provides the document.
+2. The document is hashed
+3. The application includes the hash of the document in a message and attaches it to the Tangle.
+4. Return the message-id to the user
 
-The document is hashed, using one of the following hashing algorithms.
+[![Document hashing](/img/blueprints/document-immutability-signing.png)](/img/blueprints/document-immutability-signing.png)
 
-We recommend using at least a 128-bit hashing algorithm such as the following:
-
-- SHA256 - 2<sup>128</sup>
-- SHA512 - 2<sup>256</sup>
-- SHA-3	- Up to 2<sup>512</sup>
-- BLAKE2s - 2<sup>128</sup>
-- BLAKE2b - 2<sup>256</sup>
-
-#### Saving a document
-
-After being hashed, the document is stored in a database and the document ID that the database returns is saved elsewhere so the application can find it again.
-
-#### Attaching the hash to the Tangle
-
-The document hash is put in the `signatureMessageFragment` field of a transaction and sent to the IOTA node to attach it to the Tangle.
-
-#### Saving the transaction hash to the database
-
-The transaction hash in the Tangle is saved in the database so that the application can ask the IOTA node to return it when necessary.
+The document is hashed, using the SHA256-hash function. We recommend using at least a 128-bit hashing algorithm.
+The hash is inserted into an `IndexationPayload` message that is sent to the selected IOTA node, which proceeds to attach it to the Tangle. Once the node has attached the message, it returns the message-id, which the user can then store.
 
 ### Verifying a Document
 
-When a user wants to verify a document, the application does the following:
+When a user wants to verify the integrity of a document, the process in the web application is the following:
 
-1. Get the transaction hash from the database
-2. Download the document from the database
-3. Read the transaction in the Tangle
-4. Hash the document and compare the results
+1. The user provides the document and the message-id referencing the Proof of Existence
+2. The web application fetches the Proof of Existence from the message of the Tangle by querying the selected node
+3. The document is hashed 
+4. The result is compared to the fetched Proof of Existence
+5. The verification result is returned to the user
 
-#### Getting the transaction hash from the database
-
-To be able to read the document hash in the Tangle, we need the hash of the transaction it's in.
-
-#### Downloading the document
-
-To be able to hash the document, we need to download it from the database.
-
-#### Reading the transaction in the Tangle
-
-When we have the transaction hash, we can ask the IOTA node to return us the transaction, which contains the document hash in its `signatureMessageFragment` field.
-
-#### Calculating and comparing the document hash
-
-Now we have the original document and the hash of that document that was attached to the Tangle, we hash the original document again (using the same hashing algorithm as before).
+In order to access the Proof of Existence, the message-id, which references the message in the Tangle, has to be provided.
+An IOTA node is then queried to return the message, which contains the document hash in its `data` field of the `IndexationPayload` of the message.
+Now, the document is simply hashed and compared with the Proof of Existence-hash.
 
 If the two hashes match, the file is unchanged.
+if the hashes do not match, we know that the file has been changed between now and the time its Proof of Existence was attached to the Tangle.
 
-if the hashes do not match, we know that the file has been changed between now and the time it was attached to the Tangle.
-
-![Document hashing](/img/blueprints/document-immutability-verification2.png)
-
-
-
+![Document verification](/img/blueprints/document-immutability-verification.png)

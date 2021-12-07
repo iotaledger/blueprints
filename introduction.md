@@ -25,14 +25,6 @@ Documents are an important means of transporting information and contracts betwe
 -------------------------
 
 -------------------------
-![Peer-to-peer energy grid](/img/blueprints/p2p-energy-grid-thumbnail.png)
-## [Peer-to-peer Energy Grid](./p2p-energy/overview.md)
-
-Although the supply of energy is often automated, the payment system is expensive to integrate and often requires manual intervention. By creating a peer-to-peer energy grid with IOTA, you can automate the transfer of power and the payment for that power. This automation makes your infrastructure more dynamic and easier to update.
-
--------------------------
-
--------------------------
 ![Tangle data storage](/img/blueprints/tangle-data-storage-thumbnail.png)
 ## [Tangle Data Storage](./tangle-data-storage/overview.md)
 
