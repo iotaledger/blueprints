@@ -16,7 +16,7 @@ The application uses the [Proof of Existence Library](https://www.npmjs.com/pack
 
 ## Legacy Network Backwards-Compatibility
 
-As this is one of the earlier projects, it has been up and running long before the Chrysalis network. While new PoEs are of course being published to Chrysalis, proofs issued on the Legacy network are still verifiable in the application, as the underlying Proof of Existence library provides methods for both networks.
+As this is one of the earlier projects, it has been up and running long before the Chrysalis network. While new PoEs are published to Chrysalis, proofs issued on the Legacy network are still verifiable in the application, as the underlying Proof of Existence library provides methods for both networks.
 The application automatically detects if the provided message-id is from the Legacy or the Chrysalis network and adjusts its procedure accordingly.
 
 ### Uploading a Proof of Existence of a Document
