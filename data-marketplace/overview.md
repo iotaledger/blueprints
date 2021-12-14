@@ -2,7 +2,7 @@
 
 :::info
 
-The updated version of the Data Market Place is **not** currently deployed at [data.iota.org](https://data.iota.org/#/). The update will happen in the next few weeks.
+The Data Market Place is **not** currently in a working state [data.iota.org](https://data.iota.org/#/). The update will happen in the next few weeks.
 
 :::
 
