@@ -2,12 +2,6 @@
 
 **To start storing data in the IPFS node and the Tangle, deploy the application and use our graphical user interface to upload file data, retrieve file data, and compare hashes to verify the contents.**
 
-:::caution
-
-Public node at [https://ipfs.iota.cafe/](https://ipfs.iota.cafe/) is currently down. Issue will be resolved soon.
-
-:::
-
 ## Prerequisites
 
 To test and deploy this application, you need the following:
