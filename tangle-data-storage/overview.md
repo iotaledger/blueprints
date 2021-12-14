@@ -4,7 +4,7 @@
 
 :::info
 
-The Tangle data storage is **not** currently in a working state [https://ipfs.iota.org/](https://ipfs.iota.org/). The update will happen in the next few weeks.
+The Tangle data storage is currently **not** in a working state. The update will happen in the next few weeks on [https://ipfs.iota.org/](https://ipfs.iota.org/).
 
 :::
 
