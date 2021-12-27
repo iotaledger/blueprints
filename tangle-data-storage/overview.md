@@ -8,7 +8,7 @@
 
 Storing, sharing and trading data is a cornerstone of business in the connected world and boosts innovation for public and private sector organisations. However, if you can't trust that the data has not been altered, then the data becomes nearly useless. By using the IOTA Tangle, businesses and connected machines can trust in the security and privacy of the data they share.
 
-### Challenges
+## Challenges
 
 A common requirement for nearly all use cases or applications is that data must be stored for later use, for example:
 
@@ -21,7 +21,7 @@ However, the Tangle is not a database. The Tangle is an immutable, distributed l
 Although permanent storage in the Tangle isn't currently possible, the IOTA Foundation are developing a solution called [Chronicle](https://wiki.iota.org/chronicle.rs/welcome).
 :::
 
-### Solution
+## Solution
 
 By creating a cryptographic hash of the document at the source and storing the hash in the Tangle, you have a method of proving that the data is unchanged. In addition, you may also want the data to remain private and allow only authorized users to view it as well as be able to revoke this authorization when needed. By using any standard encryption method, the data can be secured and only visible to those with the corresponding decryption key.
 

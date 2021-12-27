@@ -1,11 +1,5 @@
 # Data Marketplace
 
-:::info
-
-The Data Market Place is currently **not** in a working state. The update will happen in the next few weeks on [data.iota.org](https://data.iota.org/#/).
-
-:::
-
 **Data silos make it difficult to buy and sell data among different data points. To overcome this challenge, the Data Marketplace uses Masked Authenticated Messaging (MAM) channels to open up the data silos and allow users to make micropayments of IOTA tokens to the data owners in exchange for data.**
 
 ## Business case

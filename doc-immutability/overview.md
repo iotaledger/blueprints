@@ -1,9 +1,12 @@
 # Document Immutability
 
 **Documents are an important means of transporting information and contracts. Being able to reliably prove that a document has not been tampered from an established state helps ensure trust between the parties envolved. This blueprint describes a solution that enables users to verify data integrity of a document using the IOTA Tangle, while remaining in complete control of the data.**
+
 ## Business Case
 
-### Challenges
+In digitized settings, contracts and documents can be easily altered. In a world of digital trade and service, a decentralized trust anchor for contractual agreements or other important documents can be highly useful in order to enhance trust between multiple parties.
+
+## Challenges
 
 Ensuring the integrity of digital documents is currently mostly done by storing them in some trusted database or by physically printing the documents. However, in a trustless and efficient environment, this is far from optimal.
 A step in the right direction is e.g. displaying data fingerprints, so called hashes, on a website from which a file is being downloaded, which can then manually be compared to the local copy's fingerprint by a technically versed user. 
@@ -12,7 +15,7 @@ However, this procedure is too technically challenging and time consuming for mo
 Also, in a scenario not containing some centralized server, but two parties agreeing on a contract, a simple tool should exist that anchors the integrity of a document in a distributed storage. 
 
 
-### Solution
+## Solution
 
 In this blueprint, we leverage the distributed ledger of the IOTA Tangle to immutably store data fingerprints of files, thereby providing a way to verify the integrity of a document by not relying on a centralized instance. 
 This enables users to prove that a document has not been tampered with since the data fingerprint ("Proof of Existence") has been stored on the Tangle.
