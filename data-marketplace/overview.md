@@ -4,7 +4,7 @@
 
 :::caution
 
-This project uses MAM. Keep in mind that MAM is depreciated and IOTA Streams should be used.
+This project uses MAM. Keep in mind that MAM is deprecated and IOTA Streams should be used.
 
 :::
 
