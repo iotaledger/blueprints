@@ -4,6 +4,12 @@
 
 We present the integration of this blueprint in [IBCS Group](https://www.ibcsgroup.com/) business processes. This blueprint is a guide for other organizations to replicate and adapt for their own scenarios and business processes.
 
+:::caution
+
+This project uses MAM. Keep in mind that MAM is deprecated and IOTA Streams should be used.
+
+:::
+
 ## Business Case
 
 A returnable asset is an asset that's used by many parties in the distribution and logistics chain.
@@ -75,14 +81,19 @@ See this website for a [demonstration of the application](http://tradedemo.iota.
  	 	 
 ## Additional Resources
 
+---------------
 ### [Client Library](https://wiki.iota.org/iota.rs/welcome)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
 
+---
 ### [MAM Eloquently Explained](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e)
 
 Masked Authenticated Messaging is a second layer data communication protocol that adds functionality to publish and control access to an encrypted data stream, over the Tangle. Learn more about how MAM works.
 
+---
 ### [MAM GitHub Repository](https://github.com/iotaledger/mam.js)
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
+
+---------------
