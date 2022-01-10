@@ -18,7 +18,7 @@ A common requirement for nearly all use cases or applications is that data must 
 However, the Tangle is not a database. The Tangle is an immutable, distributed ledger which allows you to store a hash of data and a pointer to its location in third-party data storage.
 
 :::info:
-Although permanent storage in the Tangle isn't currently possible, the IOTA Foundation are developing a solution called [Chronicle](https://wiki.iota.org/chronicle.rs/welcome).
+Storing and retrieving messages in the Tangle indefinitely is ideally done with [Chronicle](https://wiki.iota.org/chronicle.rs/welcome).
 :::
 
 ## Solution
