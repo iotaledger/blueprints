@@ -6,7 +6,7 @@ We present the integration of this blueprint in [IBCS Group](https://www.ibcsgro
 
 :::caution
 
-This project uses MAM. Keep in mind that MAM is deprecated and IOTA Streams should be used.
+This project uses Streams v0 (former MAM). Keep in mind that Streams v0 is deprecated and [IOTA Streams](https://wiki.iota.org/streams/welcome) should be used.
 
 :::
 
