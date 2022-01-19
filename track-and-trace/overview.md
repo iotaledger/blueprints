@@ -78,6 +78,7 @@ This image presents a simplified stakeholders map and the different actions each
 ## Demo
 
 See this website for a [demonstration of the application](http://tradedemo.iota.org).
+Also, have a look at this website for a [smart agriculture PoC](https://future-farm.iota.org/) with a very similar codebase. Read more about it in our [blogpost](https://blog.iota.org/using-the-tangle-for-smart-agriculture-the-iota-foundation-teams-up-with-future-farm-consortium-a9d1757e33c/). 
  	 	 
 ## Additional Resources
 
