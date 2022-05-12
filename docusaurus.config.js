@@ -10,6 +10,8 @@ const path = require('path');
                 routeBasePath: 'blueprints',
                 sidebarPath: path.resolve(__dirname, 'sidebars.js'),
                 editUrl: 'https://github.com/iotaledger/blueprints/edit/main',
+                include: ['**.md'],
+                exclude: ['README.md', 'node_modules']
             }
         ],
     ],
