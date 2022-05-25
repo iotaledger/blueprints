@@ -1,7 +1,0 @@
-{
-    "repoName": "blueprints",
-    "contentFolder": "/",
-    "localWikiFolder": "local-wiki",
-    "staticPath": "/static/img",
-    "excludeList": ["node_modules", "target", ".git/", "local-wiki"]
-}
